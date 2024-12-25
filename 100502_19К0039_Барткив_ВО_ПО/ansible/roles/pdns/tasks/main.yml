@@ -1,0 +1,30 @@
+---
+- name: установка pdns
+  apt:
+    name: pdns-server
+    state: latest
+  become: yes
+  
+- name: установка pdns
+  apt:
+    name: pdns-backend-ldap
+    state: latest
+  become: yes
+  
+- name: pdns.conf
+  template:
+    src: pdns.conf.j2
+    dest: "/etc/powerdns/pdns.conf"
+    owner: root
+    group: root
+    mode: 0644
+  become: yes
+  
+- name: pdns.local
+  template:
+    src: pdns.local.j2
+    dest: "/etc/powerdns/pdns.d/pdns.lcal"
+    owner: root
+    group: root
+    mode: 0644
+  become: yes

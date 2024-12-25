@@ -1,0 +1,7 @@
+﻿   Qt/MSBuild: 3.3.0.13
+   Qt: 6.6.1
+  configurator.cpp
+  main.cpp
+  qrc_configurator.cpp
+  moc_configurator.cpp
+  configurator.vcxproj -> C:\Users\pofig\source\repos\configurator\x64\Debug\configurator.exe

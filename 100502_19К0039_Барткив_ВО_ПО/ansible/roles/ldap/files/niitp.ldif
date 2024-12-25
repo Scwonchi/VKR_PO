@@ -1,0 +1,6 @@
+dn: cn=niitpmeat,cn=schema,cn=config
+objectClass: olcSchemaConfig
+cn: niitpmeat
+olcAttributeTypes: ( 2.25.105153986841715542261100756788575321655 NAME 'dhcpdManaged' DESC 'node is managed by dhcpd' EQUALITY booleanMatch SYNTAX 1.3.6.1.4.1.1466.115.121.1.7 SINGLE-VALUE )
+olcAttributeTypes: ( 2.25.55632613075487409396743809827901270720 NAME 'dhcpdInstance' DESC 'client Identifier.' EQUALITY caseIgnoreIA5Match SYNTAX 1.3.6.1.4.1.1466.115.121.1.26 )
+olcObjectClasses: ( 2.25.252973203410952014214885709140652292750 NAME 'metaNIITP' DESC 'NIITP metadata' SUP top AUXILIARY MAY ( dhcpdManaged $ dhcpdInstance ) )

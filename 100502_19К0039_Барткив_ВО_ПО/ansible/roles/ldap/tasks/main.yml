@@ -1,0 +1,129 @@
+---
+- name: установка openldap
+  apt:
+    name: slapd
+    state: latest
+  become: yes
+  tags:
+    - ldap
+    
+- name: установка openldap
+  apt:
+    name: ldap-utils
+    state: latest
+  become: yes
+  tags:
+    - ldap
+    
+- name: установка паролья
+  shell: slappasswd -s "{{ ldappassword }}"
+  register: passw
+  become: yes
+
+- name: установка паролья
+  shell: slappasswd -s "{{ ldappassword }}"
+  register: passw2
+  become: yes
+  
+- name: настройка config 0
+  template:
+    src: tmp.j2
+    dest: "{{ config }}"
+    owner: root
+    group: root
+    mode: 0644
+  become: yes
+  
+- name: настройка config 1
+  template:
+    src: tmp2.j2
+    dest: "{{ mdb }}"
+    owner: root
+    group: root
+    mode: 0644
+  become: yes
+  
+- name: slapd restart
+  service:
+    name: slapd
+    state: restarted
+  become: yes
+  
+- name: копирование дерева
+  template:
+    src: tree.ldif.j2
+    dest: /tmp/tree.ldif
+    owner: root
+    group: root
+  become: yes
+  
+- name: импортирование дерева
+  shell: ldapadd -w {{ ldappassword }} -x -c -D dc=GOLOVA,dc=virtlabs -f /tmp/tree.ldif
+  ignore_errors: yes
+
+- name: cp schemas
+  template:
+    src: add_schemas.ldif.j2
+    dest: /tmp/add_schemas.ldif
+    owner: root
+    group: root
+  become: yes
+  
+- name: cp dnsdomain1
+  copy:
+    src: dnsdomain1.ldif
+    dest: /tmp/dnsdomain1.ldif
+  become: yes
+  
+- name: import dnsdomain1
+  shell: ldapadd -x -D 'cn=config' -w password -f /tmp/dnsdomain1.ldif
+  ignore_errors: yes
+  
+- name: cp dnsdomain2
+  copy:
+    src: dnsdomain2.ldif
+    dest: /tmp/dnsdomain2.ldif
+  become: yes
+  
+- name: import dnsdomain2
+  shell: ldapadd -x -D 'cn=config' -w password -f /tmp/dnsdomain2.ldif
+  ignore_errors: yes
+  
+- name: cp niitp
+  copy:
+    src: niitp.ldif
+    dest: /tmp/niitp.ldif
+  become: yes
+  
+- name: import niitp
+  shell: ldapadd -x -D 'cn=config' -w password -f /tmp/niitp.ldif
+  ignore_errors: yes
+  
+- name: cp dhcp
+  copy:
+    src: dhcp.ldif
+    dest: /tmp/dhcp.ldif
+  become: yes
+  
+- name: import dnsdomain2
+  shell: ldapadd -x -D 'cn=config' -w password -f /tmp/dhcp.ldif
+  ignore_errors: yes
+  
+- name: install pip
+  apt:
+    name: 
+        - python3-pip
+        - libsasl2-dev
+        - python-dev
+        - libldap2-dev
+        - libssl-dev
+    state: latest
+  become: yes
+  
+- name: install python-ldap package
+  pip:
+    name: 
+        - python-ldap
+        - isc_dhcp_leases
+  become: yes
+      

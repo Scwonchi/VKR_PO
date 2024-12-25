@@ -1,0 +1,496 @@
+dn: dc=virtlabs
+objectClass: dcObject
+objectClass: organization
+objectClass: top
+dc: virtlabs
+o: virtlabs
+
+dn: dc=grp,dc=virtlabs
+objectClass: dcObject
+objectClass: organizationalRole
+objectClass: top
+cn: grp
+dc: grp
+
+dn: dc=lnk,dc=virtlabs
+objectClass: dcObject
+objectClass: organizationalRole
+objectClass: top
+cn: lnk
+dc: lnk
+
+dn: dc=obj,dc=virtlabs
+objectClass: dcObject
+objectClass: organizationalRole
+objectClass: top
+cn: obj
+dc: obj
+
+dn: dc=role,dc=virtlabs
+objectClass: dcObject
+objectClass: organizationalRole
+objectClass: top
+cn: role
+dc: role
+
+dn: dc=subj,dc=virtlabs
+objectClass: dcObject
+objectClass: organizationalRole
+objectClass: top
+cn: subj
+dc: subj
+
+dn: cn=admin,dc=virtlabs
+objectClass: organizationalRole
+objectClass: simpleSecurityObject
+cn: admin
+userPassword:: e1NTSEF9ZTN2UEZiWExWZTdNMWp6QlBIMVl4b3dOeUdvVXFVRjM=
+description: LDAP administrator
+
+dn: dc=GOLOVA,dc=virtlabs
+objectClass: dcObject
+objectClass: organizationalRole
+objectClass: top
+cn: GOLOVA
+dc: GOLOVA
+
+dn: dc=posix,dc=grp,dc=virtlabs
+objectClass: dcObject
+objectClass: organizationalRole
+objectClass: top
+cn: posix
+dc: posix
+
+dn: dc=hw,dc=obj,dc=virtlabs
+objectClass: dcObject
+objectClass: organizationalRole
+objectClass: top
+cn: hw
+dc: hw
+
+dn: dc=sw,dc=obj,dc=virtlabs
+objectClass: dcObject
+objectClass: organizationalRole
+objectClass: top
+cn: sw
+dc: sw
+
+dn: dc=srv,dc=subj,dc=virtlabs
+objectClass: dcObject
+objectClass: organizationalRole
+objectClass: top
+cn: srv
+dc: srv
+
+dn: dc=usr,dc=subj,dc=virtlabs
+objectClass: dcObject
+objectClass: organizationalRole
+objectClass: top
+cn: usr
+dc: usr
+
+dn: dc=dns,dc=srv,dc=subj,dc=virtlabs
+objectClass: dcObject
+objectClass: organizationalRole
+objectClass: top
+cn: dns
+dc: dns
+
+dn: dc=dhcp,dc=srv,dc=subj,dc=virtlabs
+objectClass: dcObject
+objectClass: organizationalRole
+objectClass: top
+cn: dhcp
+dc: dhcp
+
+dn: dc=arpa,dc=dns,dc=srv,dc=subj,dc=virtlabs
+objectClass: domain
+objectClass: top
+dc: arpa
+
+dn: dc=virtlabs,dc=dns,dc=srv,dc=subj,dc=virtlabs
+objectClass: dcObject
+objectClass: dNSDomain
+objectClass: domain
+objectClass: domainRelatedObject
+objectClass: top
+associatedDomain: virtlabs
+dc: virtlabs
+mXRecord: 10 mail.virtlabs
+nSRecord: ns.virtlabs
+sOARecord: ns.virtlabs me@example.com 1 1800 3600 86400 7200
+
+dn: dc=in-addr,dc=arpa,dc=dns,dc=srv,dc=subj,dc=virtlabs
+objectClass: domain
+objectClass: top
+dc: in-addr
+
+dn: dc=192,dc=in-addr,dc=arpa,dc=dns,dc=srv,dc=subj,dc=virtlabs
+objectClass: domain
+objectClass: top
+dc: 192
+
+dn: dc=70,dc=192,dc=in-addr,dc=arpa,dc=dns,dc=srv,dc=subj,dc=virtlabs
+objectClass: domain
+objectClass: top
+dc: 70
+
+dn: dc=168,dc=192,dc=in-addr,dc=arpa,dc=dns,dc=srv,dc=subj,dc=virtlabs
+objectClass: domain
+objectClass: top
+dc: 168
+
+dn: dc=1,dc=70,dc=192,dc=in-addr,dc=arpa,dc=dns,dc=srv,dc=subj,dc=virtlabs
+objectClass: domain
+objectClass: top
+dc: 1
+
+dn: dc=2,dc=1,dc=70,dc=192,dc=in-addr,dc=arpa,dc=dns,dc=srv,dc=subj,dc=virtl
+ abs
+objectClass: dNSDomain
+objectClass: dNSDomain2
+objectClass: domain
+objectClass: domainRelatedObject
+objectClass: top
+associatedDomain: 2.1.70.192.in-addr.arpa
+dc: 2
+pTRRecord: server.virtlabs
+
+dn: dc=3,dc=1,dc=70,dc=192,dc=in-addr,dc=arpa,dc=dns,dc=srv,dc=subj,dc=virtl
+ abs
+objectClass: dNSDomain
+objectClass: dNSDomain2
+objectClass: domain
+objectClass: domainRelatedObject
+objectClass: top
+associatedDomain: 3.1.70.192.in-addr.arpa
+dc: 3
+pTRRecord: host690222.virtlabs
+
+dn: dc=4,dc=1,dc=70,dc=192,dc=in-addr,dc=arpa,dc=dns,dc=srv,dc=subj,dc=virtl
+ abs
+objectClass: dNSDomain
+objectClass: dNSDomain2
+objectClass: domain
+objectClass: domainRelatedObject
+objectClass: top
+associatedDomain: 4.1.70.192.in-addr.arpa
+dc: 4
+pTRRecord: host690222.virtlabs
+
+dn: dc=5,dc=1,dc=70,dc=192,dc=in-addr,dc=arpa,dc=dns,dc=srv,dc=subj,dc=virtl
+ abs
+objectClass: dNSDomain
+objectClass: dNSDomain2
+objectClass: domain
+objectClass: domainRelatedObject
+objectClass: top
+associatedDomain: 5.1.70.192.in-addr.arpa
+dc: 5
+pTRRecord: host1401d8.virtlabs
+
+dn: dc=6,dc=1,dc=70,dc=192,dc=in-addr,dc=arpa,dc=dns,dc=srv,dc=subj,dc=virtl
+ abs
+objectClass: dNSDomain
+objectClass: dNSDomain2
+objectClass: domain
+objectClass: domainRelatedObject
+objectClass: top
+associatedDomain: 6.1.70.192.in-addr.arpa
+dc: 6
+pTRRecord: host1401d8.virtlabs
+
+dn: dc=7,dc=1,dc=70,dc=192,dc=in-addr,dc=arpa,dc=dns,dc=srv,dc=subj,dc=virtl
+ abs
+objectClass: dNSDomain
+objectClass: dNSDomain2
+objectClass: domain
+objectClass: domainRelatedObject
+objectClass: top
+associatedDomain: 7.1.70.192.in-addr.arpa
+dc: 7
+pTRRecord: host5b2bae.virtlabs
+
+dn: dc=8,dc=1,dc=70,dc=192,dc=in-addr,dc=arpa,dc=dns,dc=srv,dc=subj,dc=virtl
+ abs
+objectClass: dNSDomain
+objectClass: dNSDomain2
+objectClass: domain
+objectClass: domainRelatedObject
+objectClass: top
+associatedDomain: 8.1.70.192.in-addr.arpa
+dc: 8
+pTRRecord: host5b2bae.virtlabs
+
+dn: dc=9,dc=1,dc=70,dc=192,dc=in-addr,dc=arpa,dc=dns,dc=srv,dc=subj,dc=virtl
+ abs
+objectClass: dNSDomain
+objectClass: dNSDomain2
+objectClass: domain
+objectClass: domainRelatedObject
+objectClass: top
+associatedDomain: 9.1.70.192.in-addr.arpa
+dc: 9
+pTRRecord: host76a0f2.virtlabs
+
+dn: dc=10,dc=1,dc=70,dc=192,dc=in-addr,dc=arpa,dc=dns,dc=srv,dc=subj,dc=virt
+ labs
+objectClass: dNSDomain
+objectClass: dNSDomain2
+objectClass: domain
+objectClass: domainRelatedObject
+objectClass: top
+associatedDomain: 10.1.70.192.in-addr.arpa
+dc: 10
+pTRRecord: host76a0f2.virtlabs
+
+dn: dc=11,dc=1,dc=70,dc=192,dc=in-addr,dc=arpa,dc=dns,dc=srv,dc=subj,dc=virt
+ labs
+objectClass: dNSDomain
+objectClass: dNSDomain2
+objectClass: domain
+objectClass: domainRelatedObject
+objectClass: top
+associatedDomain: 11.1.70.192.in-addr.arpa
+dc: 11
+pTRRecord: host7cc784.virtlabs
+
+dn: dc=12,dc=1,dc=70,dc=192,dc=in-addr,dc=arpa,dc=dns,dc=srv,dc=subj,dc=virt
+ labs
+objectClass: dNSDomain
+objectClass: dNSDomain2
+objectClass: domain
+objectClass: domainRelatedObject
+objectClass: top
+associatedDomain: 12.1.70.192.in-addr.arpa
+dc: 12
+pTRRecord: host7cc784.virtlabs
+
+dn: dc=13,dc=1,dc=70,dc=192,dc=in-addr,dc=arpa,dc=dns,dc=srv,dc=subj,dc=virt
+ labs
+objectClass: dNSDomain
+objectClass: dNSDomain2
+objectClass: domain
+objectClass: domainRelatedObject
+objectClass: top
+associatedDomain: 13.1.70.192.in-addr.arpa
+dc: 13
+pTRRecord: host155101.virtlabs
+
+dn: dc=14,dc=1,dc=70,dc=192,dc=in-addr,dc=arpa,dc=dns,dc=srv,dc=subj,dc=virt
+ labs
+objectClass: dNSDomain
+objectClass: dNSDomain2
+objectClass: domain
+objectClass: domainRelatedObject
+objectClass: top
+associatedDomain: 14.1.70.192.in-addr.arpa
+dc: 14
+pTRRecord: host155101.virtlabs
+
+dn: dc=15,dc=1,dc=70,dc=192,dc=in-addr,dc=arpa,dc=dns,dc=srv,dc=subj,dc=virt
+ labs
+objectClass: dNSDomain
+objectClass: dNSDomain2
+objectClass: domain
+objectClass: domainRelatedObject
+objectClass: top
+associatedDomain: 15.1.70.192.in-addr.arpa
+dc: 15
+pTRRecord: host7ddd26.virtlabs
+
+dn: dc=16,dc=1,dc=70,dc=192,dc=in-addr,dc=arpa,dc=dns,dc=srv,dc=subj,dc=virt
+ labs
+objectClass: dNSDomain
+objectClass: dNSDomain2
+objectClass: domain
+objectClass: domainRelatedObject
+objectClass: top
+associatedDomain: 16.1.70.192.in-addr.arpa
+dc: 16
+pTRRecord: host7ddd26.virtlabs
+
+dn: dc=34,dc=168,dc=192,dc=in-addr,dc=arpa,dc=dns,dc=srv,dc=subj,dc=virtlabs
+objectClass: domain
+objectClass: top
+dc: 34
+
+dn: dc=24,dc=34,dc=168,dc=192,dc=in-addr,dc=arpa,dc=dns,dc=srv,dc=subj,dc=vi
+ rtlabs
+objectClass: dNSDomain
+objectClass: dNSDomain2
+objectClass: domain
+objectClass: domainRelatedObject
+objectClass: top
+associatedDomain: 24.34.168.192.in-addr.arpa
+dc: 24
+pTRRecord: hishnik.virtlabs
+
+dn: dc=host3,dc=virtlabs,dc=dns,dc=srv,dc=subj,dc=virtlabs
+objectClass: dNSDomain
+objectClass: domain
+objectClass: domainRelatedObject
+objectClass: top
+associatedDomain: 3.virtlabs
+dc: host3
+aRecord: 192.70.1.3
+
+dn: dc=host15,dc=virtlabs,dc=dns,dc=srv,dc=subj,dc=virtlabs
+objectClass: dNSDomain
+objectClass: domain
+objectClass: domainRelatedObject
+objectClass: top
+associatedDomain: 15.virtlabs
+dc: host15
+aRecord: 192.70.1.15
+
+dn: dc=server,dc=virtlabs,dc=dns,dc=srv,dc=subj,dc=virtlabs
+objectClass: dNSDomain
+objectClass: domain
+objectClass: domainRelatedObject
+objectClass: top
+associatedDomain: server.virtlabs
+dc: server
+aRecord: 192.70.1.2
+
+dn: dc=hishnik,dc=virtlabs,dc=dns,dc=srv,dc=subj,dc=virtlabs
+objectClass: dNSDomain
+objectClass: domain
+objectClass: domainRelatedObject
+objectClass: top
+associatedDomain: hishnik.virtlabs
+dc: hishnik
+aRecord: 192.168.34.24
+
+dn: dc=host1401d8,dc=virtlabs,dc=dns,dc=srv,dc=subj,dc=virtlabs
+objectClass: dNSDomain
+objectClass: domain
+objectClass: domainRelatedObject
+objectClass: top
+associatedDomain: host1401d8.virtlabs
+dc: host1401d8
+aRecord: 192.70.1.5
+
+dn: dc=host155101,dc=virtlabs,dc=dns,dc=srv,dc=subj,dc=virtlabs
+objectClass: dNSDomain
+objectClass: domain
+objectClass: domainRelatedObject
+objectClass: top
+associatedDomain: host155101.virtlabs
+dc: host155101
+aRecord: 192.70.1.13
+
+dn: dc=host5b2bae,dc=virtlabs,dc=dns,dc=srv,dc=subj,dc=virtlabs
+objectClass: dNSDomain
+objectClass: domain
+objectClass: domainRelatedObject
+objectClass: top
+associatedDomain: host5b2bae.virtlabs
+dc: host5b2bae
+aRecord: 192.70.1.7
+
+dn: dc=host690222,dc=virtlabs,dc=dns,dc=srv,dc=subj,dc=virtlabs
+objectClass: dNSDomain
+objectClass: domain
+objectClass: domainRelatedObject
+objectClass: top
+associatedDomain: host690222.virtlabs
+dc: host690222
+aRecord: 192.70.1.3
+
+dn: dc=host76a0f2,dc=virtlabs,dc=dns,dc=srv,dc=subj,dc=virtlabs
+objectClass: dNSDomain
+objectClass: domain
+objectClass: domainRelatedObject
+objectClass: top
+associatedDomain: host76a0f2.virtlabs
+dc: host76a0f2
+aRecord: 192.70.1.9
+
+dn: dc=host7cc784,dc=virtlabs,dc=dns,dc=srv,dc=subj,dc=virtlabs
+objectClass: dNSDomain
+objectClass: domain
+objectClass: domainRelatedObject
+objectClass: top
+associatedDomain: host7cc784.virtlabs
+dc: host7cc784
+aRecord: 192.70.1.11
+
+dn: dc=host7ddd26,dc=virtlabs,dc=dns,dc=srv,dc=subj,dc=virtlabs
+objectClass: dNSDomain
+objectClass: domain
+objectClass: domainRelatedObject
+objectClass: top
+associatedDomain: host7ddd26.virtlabs
+dc: host7ddd26
+aRecord: 192.70.1.15
+aRecord: 192.70.1.16
+
+dn: cn=config,dc=dhcp,dc=srv,dc=subj,dc=virtlabs
+objectClass: dhcpOptions
+objectClass: dhcpService
+objectClass: top
+cn: config
+dhcpOption: domain-name "virtlabs"
+dhcpOption: domain-name-servers 192.168.34.29
+dhcpOption: master code 43 = ip-address
+dhcpServerDN: cn=server,dc=dhcp,dc=srv,dc=subj,dc=virtlabs
+dhcpStatements: authoritative
+dhcpStatements: ddns-update-style none
+dhcpStatements: default-lease-time 691200
+dhcpStatements: max-lease-time 1382400
+
+dn: cn=server,dc=dhcp,dc=srv,dc=subj,dc=virtlabs
+objectClass: dhcpServer
+objectClass: top
+cn: server
+dhcpServiceDN: cn=config,dc=dhcp,dc=srv,dc=subj,dc=virtlabs
+
+dn: cn=192.70.1.0,cn=config,dc=dhcp,dc=srv,dc=subj,dc=virtlabs
+objectClass: dhcpSubnet
+objectClass: top
+cn: 192.70.1.0
+dhcpNetMask: 24
+dhcpOption: broadcast-address 192.70.1.2
+dhcpOption: domain-name "virtlabs"
+dhcpOption: domain-name-servers 192.168.34.29
+dhcpOption: domain-search "virtlabs"
+dhcpOption: routers 192.70.1.2
+dhcpRange: 192.70.1.2 192.70.1.254
+
+dn: cn=host1,cn=192.70.1.0,cn=config,dc=dhcp,dc=srv,dc=subj,dc=virtlabs
+objectClass: dhcpHost
+objectClass: dhcpOptions
+objectClass: top
+cn: host1
+dhcpHWAddress: ethernet 7E:31:D7:D1:2F:F8
+dhcpStatements: fixed-address 192.70.1.2
+
+dn: cn=host3,cn=192.70.1.0,cn=config,dc=dhcp,dc=srv,dc=subj,dc=virtlabs
+objectClass: dhcpLeases
+objectClass: domainRelatedObject
+objectClass: metaNIITP
+objectClass: top
+associatedDomain: 3.virtlabs
+cn: 3
+cn: host3
+dhcpAddressState: 192.70.1.3
+dhcpdInstance: server1
+dhcpdManaged: TRUE
+dhcpExpirationTime: 20230822062212Z
+dhcpHWAddress: 2e:0c:ca:5c:56:00
+
+dn: cn=host15,cn=192.70.1.0,cn=config,dc=dhcp,dc=srv,dc=subj,dc=virtlabs
+objectClass: dhcpLeases
+objectClass: domainRelatedObject
+objectClass: metaNIITP
+objectClass: top
+associatedDomain: 15.virtlabs
+cn: 15
+cn: host15
+dhcpAddressState: 192.70.1.15
+dhcpdInstance: server1
+dhcpdManaged: TRUE
+dhcpExpirationTime: 20230822062701Z
+dhcpHWAddress: b6:a9:13:19:56:cf
+

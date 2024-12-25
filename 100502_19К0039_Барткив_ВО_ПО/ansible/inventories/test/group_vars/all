@@ -1,0 +1,8 @@
+config: /etc/ldap/slapd.d/cn=config/olcDatabase={0}config.ldif
+mdb: /etc/ldap/slapd.d/cn=config/olcDatabase={1}mdb.ldif
+ldapauser: dc=GOLOVA,dc=virtlabs
+ldappassword: password
+dns_ip: 192.168.34.46
+ldap_ip: 192.168.34.46
+dhcp_ip: 192.168.34.46
+interface: ens33

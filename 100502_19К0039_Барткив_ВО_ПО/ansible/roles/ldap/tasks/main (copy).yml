@@ -1,0 +1,65 @@
+---
+- name: установка openldap
+  apt:
+    name: slapd
+    state: latest
+  become: yes
+  tags:
+    - ldap
+    
+- name: установка openldap
+  apt:
+    name: ldap-utils
+    state: latest
+  become: yes
+  tags:
+    - ldap
+    
+- name: установка паролья
+  shell: slappasswd -s password >> /tmp/pass
+
+  
+- name: настройка config
+  template:
+    src: tmp.j2
+    dest: /etc/ldap/slapd.d/cn=config/olcDatabase={0}config.ldif
+    owner: root
+    group: root
+    mode: 0644
+  become: yes
+  
+- name: настройка config
+  template:
+    src: tmp2.j2
+    dest: /tmp/tmp2
+    owner: root
+    group: root
+    mode: 0644
+  become: yes
+  
+- name:  настройка
+  shell: cat /tmp/pass >> /tmp/tmp2
+  become: yes
+  
+- name:  правка 
+  shell: cat /tmp/tmp2 | xargs >> /etc/ldap/slapd.d/cn=config/olcDatabase={0}config.ldif
+  become: yes
+  
+- name: удаление pass
+  file:
+    path: "/tmp/pass"
+    state: absent
+  become: yes
+    
+- name: удаление pass
+  file:
+    path: "/tmp/tmp2"
+    state: absent
+  become: yes
+
+  
+- name: slapd restart
+  service:
+    name: slapd
+    state: restarted
+  become: yes

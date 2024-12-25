@@ -1,0 +1,18 @@
+---
+- hosts: ldap
+  user: user
+  
+  roles:
+    - role: ldap
+
+- hosts: dns
+  user: user
+
+  roles:
+    - role: pdns
+
+- hosts: dhcp
+  user: user
+
+  roles:
+    - role: dhcp

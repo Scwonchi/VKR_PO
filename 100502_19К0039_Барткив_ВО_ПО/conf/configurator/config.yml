@@ -1,0 +1,43 @@
+---
+all:
+  children:
+    ldap:
+      hosts:
+        ldap1:
+          ansible_host: 192.168.10.1
+          ansible_user: user1
+
+      vars:
+        ansible_ssh_pass: sshp
+        ansible_become_pass: becp
+
+    dns:
+      hosts:
+        dns1:
+          ansible_host: 192.168.10.1
+          ansible_user: user1
+
+      vars:
+        ansible_ssh_pass: sshp
+        ansible_become_pass: becp
+
+    dhcp:
+      hosts:
+        dhcph1:
+          ansible_host: 192.168.10.1
+          ansible_user: user1
+
+      vars:
+        ansible_ssh_pass: sshp
+        ansible_become_pass: becp
+
+    adminstaion:
+      hosts:
+        adminstation1:
+          ansible_host: 192.168.10.1
+          ansible_user: user1
+
+      vars:
+        ansible_ssh_pass: sshp
+        ansible_become_pass: becp
+
